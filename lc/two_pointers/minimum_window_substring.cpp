@@ -6,19 +6,19 @@ std::string minWindow(std::string s, std::string t) {
 	memset(mp, 0, sizeof(mp));
 	int count[128];
 	memset(count, 0, sizeof(count));
-	for(int i=0; i<t.size(); i++){
+	for(int i=0; i<t.length(); i++){
 		mp[t[i]]=1;
 		count[t[i]]++;
 	}
 	int i=0, j=0, c=0;
-	int minStart=0, minLen=s.size();
-	for(j=0; j<s.size(); j++){
+	int minStart=0, minLen=s.length();
+	for(j=0; j<s.length(); j++){
 		if(mp[s[j]]){
 			if(count[s[j]]>0)
 				c++;
 			count[s[j]]--;
 		}
-		if(c==t.size())
+		if(c==t.length())
 			break;
 	}
 	while(i<j&&(!mp[s[i]]||count[s[i]]<0)){
@@ -26,14 +26,14 @@ std::string minWindow(std::string s, std::string t) {
 			count[s[i]]++;
 		i++;
 	}
-	if(c==t.size()){
+	if(c==t.length()){
 		minLen=j-i+1;
 		minStart=i;
 		j++;
 	}
 	else
 		return "";
-	while(j<s.size()){
+	while(j<s.length()){
 		if(mp[s[j]]){
 			count[s[j]]--;
 		}

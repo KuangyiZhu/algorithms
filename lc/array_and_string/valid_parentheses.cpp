@@ -3,7 +3,7 @@
 
 bool isValid(std::string s) {
 	std::vector<char> parentheses;
-	for(int i=0; i<s.size(); i++){
+	for(int i=0; i<s.length(); i++){
 		switch(s[i]){
 			case '(':
 			case '[':
@@ -29,4 +29,3 @@ bool isValid(std::string s) {
 	}
 	return parentheses.empty();
 }
-

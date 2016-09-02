@@ -20,7 +20,7 @@ public:
 	// Inserts a word into the trie.
 	void insert(std::string word) {
 		TrieNode* node = root;
-		for(int i=0; i<word.size(); i++){
+		for(int i=0; i<word.length(); i++){
 			if(node->children[word[i]]==NULL){
 				node->children[word[i]] = new TrieNode();
 			}
@@ -32,7 +32,7 @@ public:
 	// Returns if the word is in the trie.
 	bool search(std::string word) {
 		TrieNode* node = root;
-		for(int i=0; i<word.size(); i++){
+		for(int i=0; i<word.length(); i++){
 			if(node->children.count(word[i])){
 				node = node->children[word[i]];
 			}
@@ -47,7 +47,7 @@ public:
 	// that starts with the given prefix.
 	bool startsWith(std::string prefix) {
 		TrieNode* node = root;
-		for(int i=0; i<prefix.size(); i++){
+		for(int i=0; i<prefix.length(); i++){
 			if(node->children.count(prefix[i])){
 				node = node->children[prefix[i]];
 			}

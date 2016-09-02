@@ -2,11 +2,11 @@
 #include<string.h>
 
 int numDistinct(std::string s, std::string t) {
-	int n = t.size();
+	int n = t.length();
 	int dp[n];
 	memset(dp, 0, sizeof(dp));
 	int prev;
-	for(int i=0; i<s.size(); i++){
+	for(int i=0; i<s.length(); i++){
 		prev = 1;
 		for(int j=0; j<n; j++){
 			if(s[i] == t[j]){

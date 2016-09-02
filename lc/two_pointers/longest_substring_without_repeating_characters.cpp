@@ -6,7 +6,7 @@ int lengthOfLongestSubstring(std::string s) {
 	int mp[256];
 	memset(mp, 0, sizeof(mp));
 	int i=0, j=-1;
-	for(i=0; i<s.size(); i++){
+	for(i=0; i<s.length(); i++){
 		mp[s[i]]++;
 		while(mp[s[i]]>1){
 			j++;
@@ -17,4 +17,3 @@ int lengthOfLongestSubstring(std::string s) {
 	}
 	return res;
 }
-

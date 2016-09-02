@@ -2,10 +2,10 @@
 #include<map>
 
 bool isAnagram(std::string s, std::string t) {
-	if(s.size()!=t.size())
+	if(s.length()!=t.length())
 		return false;
 	std::map<char, int> flags;
-	for(int i=0; i<s.size(); i++){
+	for(int i=0; i<s.length(); i++){
 		flags[s[i]]++;
 		flags[t[i]]--;
 	}
