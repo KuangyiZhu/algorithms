@@ -13,6 +13,17 @@ return [0, 1].
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        
+        vector<int> result;
+        unordered_map<int> two_sum;
+        for(int i  = 0; i < nums.size(); i++) {
+            if(two_sum.find(target - nums[i]) != two_sum.end()) {
+                result.push_back(i);
+                result.push_back(two_sum[target - nums[i]]);
+            } else {
+                two_sum[nums[i]] = i;
+            }
+               
+        }
+        return result;
     }
 };
